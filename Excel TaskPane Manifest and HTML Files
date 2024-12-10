@@ -1,0 +1,181 @@
+// manifest.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xsi:type="TaskPaneApp">
+    <Id>12345678-1234-1234-1234-123456789012</Id>
+    <Version>1.0.0.0</Version>
+    <ProviderName>Contoso</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="Excel Operations" />
+    <Description DefaultValue="Excel Operations Add-in" />
+    <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
+    <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png" />
+    <SupportUrl DefaultValue="https://localhost:3000/support" />
+    <Hosts>
+        <Host Name="Workbook" />
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://localhost:3000/taskpane1.html" />
+    </DefaultSettings>
+    <Permissions>ReadWriteDocument</Permissions>
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+        <Hosts>
+            <Host xsi:type="Workbook">
+                <DesktopFormFactor>
+                    <ExtensionPoint xsi:type="PrimaryCommandSurface">
+                        <CustomTab id="ExcelOperations">
+                            <Group id="Operations">
+                                <Label resid="Operations.Label" />
+                                
+                                <Control xsi:type="Button" id="TaskPane1Button">
+                                    <Label resid="TaskPane1.Label" />
+                                    <Supertip>
+                                        <Title resid="TaskPane1.Title" />
+                                        <Description resid="TaskPane1.Tooltip" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="Icon.16x16" />
+                                        <bt:Image size="32" resid="Icon.32x32" />
+                                        <bt:Image size="80" resid="Icon.80x80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <TaskpaneId>TaskPane1</TaskpaneId>
+                                        <SourceLocation resid="TaskPane1.Url" />
+                                    </Action>
+                                </Control>
+
+                                <Control xsi:type="Button" id="TaskPane2Button">
+                                    <Label resid="TaskPane2.Label" />
+                                    <Supertip>
+                                        <Title resid="TaskPane2.Title" />
+                                        <Description resid="TaskPane2.Tooltip" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="Icon.16x16" />
+                                        <bt:Image size="32" resid="Icon.32x32" />
+                                        <bt:Image size="80" resid="Icon.80x80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <TaskpaneId>TaskPane2</TaskpaneId>
+                                        <SourceLocation resid="TaskPane2.Url" />
+                                    </Action>
+                                </Control>
+
+                                <!-- Controls for TaskPane 3-15 follow the same pattern -->
+
+                            </Group>
+                            <Label resid="CustomTab.Label" />
+                        </CustomTab>
+                    </ExtensionPoint>
+                </DesktopFormFactor>
+            </Host>
+        </Hosts>
+        <Resources>
+            <bt:Images>
+                <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+                <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+                <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
+            </bt:Images>
+            <bt:Urls>
+                <bt:Url id="TaskPane1.Url" DefaultValue="https://localhost:3000/taskpane1.html" />
+                <bt:Url id="TaskPane2.Url" DefaultValue="https://localhost:3000/taskpane2.html" />
+                <bt:Url id="TaskPane3.Url" DefaultValue="https://localhost:3000/taskpane3.html" />
+                <bt:Url id="TaskPane4.Url" DefaultValue="https://localhost:3000/taskpane4.html" />
+                <bt:Url id="TaskPane5.Url" DefaultValue="https://localhost:3000/taskpane5.html" />
+                <bt:Url id="TaskPane6.Url" DefaultValue="https://localhost:3000/taskpane6.html" />
+                <bt:Url id="TaskPane7.Url" DefaultValue="https://localhost:3000/taskpane7.html" />
+                <bt:Url id="TaskPane8.Url" DefaultValue="https://localhost:3000/taskpane8.html" />
+                <bt:Url id="TaskPane9.Url" DefaultValue="https://localhost:3000/taskpane9.html" />
+                <bt:Url id="TaskPane10.Url" DefaultValue="https://localhost:3000/taskpane10.html" />
+                <bt:Url id="TaskPane11.Url" DefaultValue="https://localhost:3000/taskpane11.html" />
+                <bt:Url id="TaskPane12.Url" DefaultValue="https://localhost:3000/taskpane12.html" />
+                <bt:Url id="TaskPane13.Url" DefaultValue="https://localhost:3000/taskpane13.html" />
+                <bt:Url id="TaskPane14.Url" DefaultValue="https://localhost:3000/taskpane14.html" />
+                <bt:Url id="TaskPane15.Url" DefaultValue="https://localhost:3000/taskpane15.html" />
+            </bt:Urls>
+            <bt:ShortStrings>
+                <bt:String id="Operations.Label" DefaultValue="Excel Operations" />
+                <bt:String id="CustomTab.Label" DefaultValue="Excel Operations" />
+                <bt:String id="TaskPane1.Label" DefaultValue="Workbook Operations" />
+                <bt:String id="TaskPane1.Title" DefaultValue="Workbook Operations" />
+                <bt:String id="TaskPane2.Label" DefaultValue="Worksheet Operations" />
+                <bt:String id="TaskPane2.Title" DefaultValue="Worksheet Operations" />
+                <bt:String id="TaskPane3.Label" DefaultValue="Range Operations" />
+                <bt:String id="TaskPane3.Title" DefaultValue="Range Operations" />
+                <bt:String id="TaskPane4.Label" DefaultValue="Data Operations" />
+                <bt:String id="TaskPane4.Title" DefaultValue="Data Operations" />
+                <bt:String id="TaskPane5.Label" DefaultValue="Formula Operations" />
+                <bt:String id="TaskPane5.Title" DefaultValue="Formula Operations" />
+                <bt:String id="TaskPane6.Label" DefaultValue="Chart Operations" />
+                <bt:String id="TaskPane6.Title" DefaultValue="Chart Operations" />
+                <bt:String id="TaskPane7.Label" DefaultValue="Shape Operations" />
+                <bt:String id="TaskPane7.Title" DefaultValue="Shape Operations" />
+                <bt:String id="TaskPane8.Label" DefaultValue="Protection Operations" />
+                <bt:String id="TaskPane8.Title" DefaultValue="Protection Operations" />
+                <bt:String id="TaskPane9.Label" DefaultValue="Print Operations" />
+                <bt:String id="TaskPane9.Title" DefaultValue="Print Operations" />
+                <bt:String id="TaskPane10.Label" DefaultValue="Data Analysis" />
+                <bt:String id="TaskPane10.Title" DefaultValue="Data Analysis" />
+                <bt:String id="TaskPane11.Label" DefaultValue="Custom Functions" />
+                <bt:String id="TaskPane11.Title" DefaultValue="Custom Functions" />
+                <bt:String id="TaskPane12.Label" DefaultValue="Table Operations" />
+                <bt:String id="TaskPane12.Title" DefaultValue="Table Operations" />
+                <bt:String id="TaskPane13.Label" DefaultValue="PivotTable Operations" />
+                <bt:String id="TaskPane13.Title" DefaultValue="PivotTable Operations" />
+                <bt:String id="TaskPane14.Label" DefaultValue="Formatting Operations" />
+                <bt:String id="TaskPane14.Title" DefaultValue="Formatting Operations" />
+                <bt:String id="TaskPane15.Label" DefaultValue="Advanced Operations" />
+                <bt:String id="TaskPane15.Title" DefaultValue="Advanced Operations" />
+            </bt:ShortStrings>
+            <bt:LongStrings>
+                <bt:String id="TaskPane1.Tooltip" DefaultValue="Show Workbook Operations Pane" />
+                <bt:String id="TaskPane2.Tooltip" DefaultValue="Show Worksheet Operations Pane" />
+                <bt:String id="TaskPane3.Tooltip" DefaultValue="Show Range Operations Pane" />
+                <bt:String id="TaskPane4.Tooltip" DefaultValue="Show Data Operations Pane" />
+                <bt:String id="TaskPane5.Tooltip" DefaultValue="Show Formula Operations Pane" />
+                <bt:String id="TaskPane6.Tooltip" DefaultValue="Show Chart Operations Pane" />
+                <bt:String id="TaskPane7.Tooltip" DefaultValue="Show Shape Operations Pane" />
+                <bt:String id="TaskPane8.Tooltip" DefaultValue="Show Protection Operations Pane" />
+                <bt:String id="TaskPane9.Tooltip" DefaultValue="Show Print Operations Pane" />
+                <bt:String id="TaskPane10.Tooltip" DefaultValue="Show Data Analysis Pane" />
+                <bt:String id="TaskPane11.Tooltip" DefaultValue="Show Custom Functions Pane" />
+                <bt:String id="TaskPane12.Tooltip" DefaultValue="Show Table Operations Pane" />
+                <bt:String id="TaskPane13.Tooltip" DefaultValue="Show PivotTable Operations Pane" />
+                <bt:String id="TaskPane14.Tooltip" DefaultValue="Show Formatting Operations Pane" />
+                <bt:String id="TaskPane15.Tooltip" DefaultValue="Show Advanced Operations Pane" />
+            </bt:LongStrings>
+        </Resources>
+    </VersionOverrides>
+</OfficeApp>
+
+// taskpane1.html (Workbook Operations)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Workbook Operations</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
+
+// taskpane2.html (Worksheet Operations)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Worksheet Operations</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
+
+// taskpane3.html through taskpane15.html follow the same pattern
